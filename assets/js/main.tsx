@@ -1,12 +1,10 @@
-import ReactDOM from "react-dom/client";
 import App from "app/App";
 import workerUrl from "app/worker?worker&url";
+import ReactDOM from "react-dom/client";
 
 // console.log('worker',worker)
-import init, { startup }  from "pkg/wasm_worker_vite_starter";
+import init, { startup } from "pkg/wasm_worker_vite_starter";
 // console.log('wasm',wasm)
-
-
 
 async function run_wasm() {
 	// Load the Wasm file by awaiting the Promise returned by `wasm_bindgen`

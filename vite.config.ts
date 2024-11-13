@@ -1,10 +1,10 @@
-import { defineConfig } from "vitest/config";
+import nodeResolve from "@rollup/plugin-node-resolve";
 import react from "@vitejs/plugin-react";
-import wasm from "vite-plugin-wasm";
-import topLevelAwait from "vite-plugin-top-level-await";
-import tsconfigPaths from "vite-tsconfig-paths";
 import rollupTsConfigPaths from "rollup-plugin-tsconfig-paths";
-import nodeResolve from "@rollup/plugin-node-resolve"
+import topLevelAwait from "vite-plugin-top-level-await";
+import wasm from "vite-plugin-wasm";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
 	plugins: [react(), wasm(), topLevelAwait(), tsconfigPaths()],
