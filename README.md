@@ -1,5 +1,9 @@
 # wasm-worker-vite-starter
 
+[![Playwright Tests](https://github.com/rockerBOO/wasm-worker-vite-starter/actions/workflows/playwright.yaml/badge.svg?branch=main)](https://github.com/rockerBOO/wasm-worker-vite-starter/actions/workflows/playwright.yaml)
+[![.github/workflows/test.yaml](https://github.com/rockerBOO/wasm-worker-vite-starter/actions/workflows/test.yaml/badge.svg)](https://github.com/rockerBOO/wasm-worker-vite-starter/actions/workflows/test.yaml)
+[![.github/workflows/wasm-bindgen-test.yaml](https://github.com/rockerBOO/wasm-worker-vite-starter/actions/workflows/wasm-bindgen-test.yaml/badge.svg)](https://github.com/rockerBOO/wasm-worker-vite-starter/actions/workflows/wasm-bindgen-test.yaml)
+
 <!--toc:start-->
 - [wasm-worker-vite-starter](#wasm-worker-vite-starter)
   - [Structure](#structure)
