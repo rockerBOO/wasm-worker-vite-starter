@@ -1,0 +1,103 @@
+:root {
+  --bg-color: #081415;
+  --fg-color: #bbe8d5;
+
+  --accent-bg-color: #063a35;
+  --accent-fg-color: #b0fff0;
+
+  --accent-color: #08f7ca;
+
+  --aside-bg-color: #112c2f;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  font-display: optional;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "Inter Variable", sans-serif;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+p {
+  margin: 1em 0 2em 0;
+}
+
+h1 {
+  font-weight: 900;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+a {
+  color: var(--accent-fg-color);
+  transition: all ease-in-out 96ms;
+}
+
+a:hover,
+a:focus {
+  color: var(--bg-color);
+  background-color: var(--accent-fg-color);
+}
+
+button {
+  border-radius: 0.2em;
+  background-color: var(--accent-bg-color);
+  color: var(--accent-color);
+  padding: 0.5em 0.75em;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: gray;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7em 0.7em;
+  font-size: 1rem;
+  font-family: monospace;
+  background-color: transparent;
+  border: 0.15em solid gray;
+  border-radius: 0.2em;
+  color: var(--fg-color);
+}
+
+textarea:focus {
+  border-color: var(--accent-fg-color);
+  box-shadow: 1px 1px black;
+  outline: 0;
+}
+
+/** pico container **/
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 510px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 950px;
+  }
+}

@@ -1,0 +1,30 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set Node.js lts/*
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Corepack 
+        run: corepack enable
+
+      - name: Run install
+        run: yarn install
+
+      - name: Test
+        run: yarn test
+
