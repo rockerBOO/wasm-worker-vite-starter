@@ -10,6 +10,8 @@ on:
       - '**/*.mjs'
       - '**/*.json'
       - '**/*.css'
+      - '**/*.yaml'
+      - '**/*.yml'
   pull_request:
     branches: [ main ]
     paths:
@@ -21,6 +23,8 @@ on:
       - '**/*.mjs'
       - '**/*.json'
       - '**/*.css'
+      - '**/*.yaml'
+      - '**/*.yml'
 jobs:
   test:
     timeout-minutes: 60
