@@ -1,8 +1,10 @@
 use std::cell::RefCell;
-use std::rc::Rc;
 use std::panic;
+use std::rc::Rc;
 use wasm_bindgen::prelude::*;
-use web_sys::{console, HtmlElement, HtmlInputElement, MessageEvent, Worker, WorkerOptions, WorkerType};
+use web_sys::{
+    console, HtmlElement, HtmlInputElement, MessageEvent, Worker, WorkerOptions, WorkerType,
+};
 
 extern crate console_error_panic_hook;
 
@@ -58,7 +60,9 @@ pub fn startup(worker: &str) {
     // not be needed but we include the wrapping anyway as example.
     let worker_options = WorkerOptions::new();
     worker_options.set_type(WorkerType::Module);
-    let worker_handle = Rc::new(RefCell::new(Worker::new_with_options(worker, &worker_options).unwrap()));
+    let worker_handle = Rc::new(RefCell::new(
+        Worker::new_with_options(worker, &worker_options).unwrap(),
+    ));
     console::log_1(&"Created a new worker from within Wasm".into());
 
     // Pass the worker to the function which sets up the `oninput` callback.
@@ -144,4 +148,15 @@ fn get_on_msg_callback() -> Closure<dyn FnMut(MessageEvent)> {
             .expect("#resultField should be a HtmlInputElement")
             .set_inner_text(result);
     })
+}
+
+#[cfg(test)]
+pub mod tests {
+    use wasm_bindgen_test::wasm_bindgen_test;
+    wasm_bindgen_test::wasm_bindgen_test_configure!(run_in_browser);
+
+    #[wasm_bindgen_test]
+    fn pass() {
+        assert_eq!(1, 1);
+    }
 }

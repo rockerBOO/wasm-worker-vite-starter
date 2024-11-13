@@ -24,5 +24,8 @@ features = [
   'WorkerType'
 ]
 
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+
 [profile.release]
 lto = true
