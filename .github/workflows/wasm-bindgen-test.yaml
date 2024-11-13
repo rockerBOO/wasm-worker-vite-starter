@@ -1,3 +1,4 @@
+name: Wasm-Bindgen Tests
 on:
   push:
     branches: [ main ]
