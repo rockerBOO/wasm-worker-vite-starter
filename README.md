@@ -1,8 +1,10 @@
 # wasm-worker-vite-starter
 
+Need a WebWorker + Wasm (Wasm-Bindgen Rust) + React and like Vite?
+
 Starter template for working with React + WasmBindgen + WebWorker
 
-- React 
+- React
 - Vitest
 - testing-library
 - playwright
@@ -12,7 +14,7 @@ Starter template for working with React + WasmBindgen + WebWorker
 
 ## Structure
 
-- /assets/  # js/css/img that gets bundled
+- /assets/ # js/css/img that gets bundled
 - /src/ # rust code
 - /tests/ # unit/integration tests
 - /e2e/ # e2e with playwright

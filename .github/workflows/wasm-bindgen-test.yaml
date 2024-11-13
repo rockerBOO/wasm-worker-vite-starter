@@ -13,5 +13,5 @@ jobs:
       - name: Install
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
-      - run: wasm-pack test --headless --chrome crates/lora-inspector-wasm
-      - run: wasm-pack test --headless --firefox crates/lora-inspector-wasm
+      - run: wasm-pack test --headless --chrome
+      - run: wasm-pack test --headless --firefox
