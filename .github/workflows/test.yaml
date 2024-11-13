@@ -15,10 +15,22 @@ jobs:
           node-version: lts/*
           cache: 'yarn'
 
+      - name: Corepack 
+        run: corepack enable
+
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Run install
+        run: yarn install
+
+      - name: Get installed Playwright version
+        id: playwright-version
+        run: |
+          PLAYWRIGHT_VERSION=$(yarn info @playwright/test --manifest | grep -oP '(?<=Version: )\S+')
+          echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
 
       - name: Cache playwright binaries
         uses: actions/cache@v3
@@ -28,16 +40,13 @@ jobs:
             ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
 
-      - name: Corepack 
-        run: corepack enable
-
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
         if: steps.playwright-cache.outputs.cache-hit != 'true'
 
-      - name: Run install
-        run: yarn install
+      - name: Lint with Biome
+        run: yarn lint
 
-      - name: Test
+      - name: Test with Vitest
         run: yarn test
 
