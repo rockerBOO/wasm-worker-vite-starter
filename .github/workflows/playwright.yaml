@@ -2,8 +2,25 @@ name: Playwright Tests
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**/*.js'
+      - '**/*.jsx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.mjs'
+      - '**/*.json'
+      - '**/*.css'
   pull_request:
     branches: [ main ]
+    paths:
+      - '**.js'
+      - '**/*.js'
+      - '**/*.jsx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.mjs'
+      - '**/*.json'
+      - '**/*.css'
 jobs:
   test:
     timeout-minutes: 60

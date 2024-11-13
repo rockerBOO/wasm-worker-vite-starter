@@ -1,5 +1,16 @@
 # wasm-worker-vite-starter
 
+<!--toc:start-->
+- [wasm-worker-vite-starter](#wasm-worker-vite-starter)
+  - [Structure](#structure)
+  - [Usage](#usage)
+    - [Dev](#dev)
+    - [Tests](#tests)
+    - [Build](#build)
+  - [Github actions](#github-actions)
+  - [Thank you](#thank-you)
+<!--toc:end-->
+
 Need a WebWorker + Wasm (Wasm-Bindgen Rust) + React and like Vite?
 
 Starter template for working with React + WasmBindgen + WebWorker
@@ -54,7 +65,7 @@ $ yarn test
 
 Playwright e2e tests
 
-```bash
+```
 $ yarn e2e
 Running 1 test using 1 worker
   1 passed (3.8s)
@@ -62,7 +73,7 @@ Running 1 test using 1 worker
 
 ### Build
 
-```bash
+```
 $ yarn build
 vite v5.4.10 building for production...
 ✓ 34 modules transformed.
@@ -72,3 +83,16 @@ dist/assets/wasm_worker_vite_starter_bg-Ub1HC4sI.wasm   25.92 kB
 dist/assets/index-ejCtqbNh.css                           1.85 kB │ gzip:  0.82 kB
 dist/assets/index-C3T0UCnM.js                          150.51 kB │ gzip: 48.70 kB
 ```
+
+## Github actions
+
+Setup Github actions for testing JS/TS/Wasm
+
+- test
+- wasm-bindgen-test
+- e2e playwright
+- dependbot
+
+## Thank you
+
+If you have any feedback to make this a better starter, let me know.
